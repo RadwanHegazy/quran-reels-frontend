@@ -1,3 +1,6 @@
+from django.shortcuts import render
 
 def register (request) :
-    pass
+    response = render(request,'auth/register.html')
+
+    return response
