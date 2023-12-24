@@ -1,0 +1,144 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --var-font:"Cairo",sans-serif;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color:#2D0730;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+
+
+.up {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.up .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.up .user img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #F700FF;
+    filter: drop-shadow(0px 0px 30px #F700FF40);
+    padding: 6px;
+}
+
+.up .user p {
+    font-family: var(--var-font);
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    text-shadow: 0px 0px 20px #ffffff40;
+}
+
+
+.up .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    font-family: var(--var-font);
+}
+
+
+.up .btns a {
+    text-decoration: none;
+    width: 150px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.up .btns a.logout {
+    background-color: crimson;
+    box-shadow: 0px 0px 30px rgba(220, 20, 60, 0.384);
+}
+
+.up .btns a.upload {
+    background-color: #2DF248;
+    box-shadow: 0px 0px 30px #2df24759;
+}
+
+
+.reels {
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.reels .reel {
+    width: 350px;
+    height: 370px;
+    border-radius: 67px;
+    background-color: #380C3B;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.reel img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid #F700FF;
+    filter: drop-shadow(0px 0px 30px #F700FF40);
+    padding: 12px;
+}
+
+.reel p {
+    font-family: var(--var-font);
+    font-weight: bold;
+    font-size: 20px;
+    color: #76359B;
+    text-shadow: 0px 0px 20px #76359B90;
+}
+
+.reel a {
+    font-family: var(--var-font);
+    text-decoration: none;
+    color: #BD87DC;
+    font-weight: bold;
+    background-color: #7C098D;
+    border-radius: 8px;
+    width: 130px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; 
+}

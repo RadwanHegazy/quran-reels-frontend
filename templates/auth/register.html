@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>انشاء حساب</title>
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    
+    
+    <form class="container" method="POST" enctype="multipart/form-data" >
+        <div class="img-cont">
+            <input type="file"  id="ImgFile" name="picture" hidden>
+            <img src="images/user.png" id="ImgView" alt="">
+            <button type="button" id="ImgBtn">تغير</button>
+        </div>
+    
+        <input type="text" name="full_name" placeholder="اسمك بالكامل">
+        <input type="email" name="email" placeholder="البريد الالكتروني">
+        <input type="password" name="password" placeholder="كلمة السر">
+
+        <div class="btns">
+            <a href="#">تسجيل الدخول ؟</a>
+            <button>انشاء حساب</button>
+        </div>
+        
+    </form>
+
+
+    <script>
+        var ImgView = document.getElementById('ImgView');
+        var ImgBtn = document.getElementById('ImgBtn');
+        var img = document.getElementById('ImgFile');
+
+        ImgBtn.addEventListener('click',function(){
+            img.click()
+            
+        })
+
+        img.addEventListener('change',(e)=>{
+            ImgView.src = URL.createObjectURL(e.target.files[0]);
+        })
+    </script>
+
+
+</body>
+</html>

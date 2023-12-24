@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رفع فيديو</title>
+    <link rel="stylesheet" href="style/upload.css">
+</head>
+<body>
+    
+
+
+    <div class="upload">
+
+        <div class="img-cont">
+            <!-- <img src="" alt=""> -->
+            <p class="warning">اختر صورة من فضلك</p>
+            
+        </div>
+
+
+
+    </div>
+   
+    <div class="controls">
+        <input type="file" id="img" hidden>
+        <button type="button" class="upload-btn" id="choose-img">أرفع الصورة</button>
+
+        <select name="surah" id="">
+            <option value="#" selected>اختر السورة</option>
+
+            <!-- all surah based here -->
+        </select>
+
+        
+        
+        <select name="verse" id="choose_verse">
+            <option value="#" selected>اختر الاية</option>
+            <option value="بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم" >verse_based_here</option>
+
+            <!-- all surah based here -->
+        </select>
+
+
+
+        <div class="in">
+            <p>المحور س</p>
+            <input type="range" id="x" min="0" max="100" value="50" name="x">
+        </div>
+
+        <div class="in">
+            <p>المحور ص</p>
+            <input type="range" id="y" min="0" max="100" value="50" name="y">
+        </div>
+        
+        <div class="in">
+            <p>مقياس الصورة</p>
+            <input type="range" name="scale" min="1" value="1" max="10" id="scale">
+        </div>
+
+        <div class="in">
+            <p>حجم الخط</p>
+            <input type="range" name="font_size" min="10" max="30" value="20" id="font_size">
+        </div>
+
+        <button class="submit">نشر</button>
+
+
+
+    </div>
+
+    <script src="js/upload.js"></script>
+
+</body>
+</html>
