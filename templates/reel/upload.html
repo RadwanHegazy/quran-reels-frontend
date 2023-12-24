@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>رفع فيديو</title>
-    <link rel="stylesheet" href="style/upload.css">
+    <link rel="stylesheet" href="{% static 'style/upload.css' %}">
 </head>
 <body>
     
@@ -69,7 +70,7 @@
 
     </div>
 
-    <script src="js/upload.js"></script>
+    <script src="{% static 'js/upload.js' %}"></script>
 
 </body>
 </html>

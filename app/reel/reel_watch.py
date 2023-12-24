@@ -1,4 +1,5 @@
-
+from django.shortcuts import render
 
 def reel (request, reeluuid) :
-    pass
+    response = render(request,'reel/reel.html')
+    return response

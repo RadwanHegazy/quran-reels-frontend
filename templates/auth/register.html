@@ -1,18 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>انشاء حساب</title>
-    <link rel="stylesheet" href="style/auth.css">
+    <link rel="stylesheet" href="{% static 'style/auth.css' %}">
 </head>
 <body>
     
     
     <form class="container" method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
         <div class="img-cont">
             <input type="file"  id="ImgFile" name="picture" hidden>
-            <img src="images/user.png" id="ImgView" alt="">
+            <img src="{% static 'images/user.png' %}" id="ImgView" alt="">
             <button type="button" id="ImgBtn">تغير</button>
         </div>
     
@@ -21,7 +23,7 @@
         <input type="password" name="password" placeholder="كلمة السر">
 
         <div class="btns">
-            <a href="#">تسجيل الدخول ؟</a>
+            <a href="{% url 'login' %}">تسجيل الدخول ؟</a>
             <button>انشاء حساب</button>
         </div>
         

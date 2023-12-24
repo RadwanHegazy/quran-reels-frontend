@@ -1,4 +1,5 @@
-
+from django.shortcuts import render
 
 def upload_reel (request) : 
-    pass
+    respones = render(request,'reel/upload.html')
+    return respones
