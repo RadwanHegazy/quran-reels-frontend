@@ -1,0 +1,3 @@
+
+def register (request) :
+    pass
