@@ -1,0 +1,5 @@
+
+
+
+def logout (request) : 
+    pass
