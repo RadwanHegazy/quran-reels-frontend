@@ -1,0 +1,136 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --var-font:"Cairo",sans-serif;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color:#2D0730;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.upload, .controls {
+    flex: 1;
+    height: 100%;
+}
+
+
+
+
+.upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.upload .img-cont {
+    background-color: #360432;
+    height: 550px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+}
+
+.upload .img-cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 34px;
+    scale: 1;
+    z-index: 2;
+    scale: 1;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 10px;
+    font-family: var(--var-font);
+    direction: rtl;
+}
+
+.controls .upload-btn {
+    font-family: var(--var-font);
+    height: 50px;
+    border-radius: 18px;
+    border: none;
+    background-color: #93189C;   
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.controls select {
+    width: 100%;
+    height: auto;
+    padding: 1rem 2rem;
+    font-family: var(--var-font);
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #360432;
+    border: none;
+    outline: none;
+}
+
+.warning {
+    font-family: var(--var-font);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #999;
+    z-index: 1;
+}
+
+.controls .in {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+
+.controls .submit {
+    font-family: var(--var-font);
+    height: 60px;
+    border-radius: 18px;
+    border: none;
+    background-color: #22C62D;   
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+
+.img-cont .text {
+    position: absolute;
+    z-index: 10;
+    position: absolute;
+    font-family: var(--var-font);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    height: auto;
+
+}

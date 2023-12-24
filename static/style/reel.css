@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --var-font:"Cairo",sans-serif;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color:#2D0730;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    width: 400px;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+
+.container .user, .container .btns {
+    height: 10%;
+}
+
+.container .img-cont {
+    height: 80%;
+}
+
+.container .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.container .user img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+
+.container .user p {
+    color: #999999;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: var(--var-font);
+}
+
+.container .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.container .btns a {
+    font-family: var(--var-font);
+    background-color: #4B1C4B;
+    width: 100px;
+    height: 40px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container .img-cont {
+    overflow: hidden;
+    border-radius: 30px;
+    position: relative;
+    height: 550px;
+}
+
+.container .img-cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.container .img-cont p.text {
+    position: absolute;
+    z-index: 999;
+    font-weight: bold;
+    font-size: 3rem;
+    top: 10px;
+    color: red;
+    right: 10px;
+    cursor: default;
+}
+
+
+.container .img-cont .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}
