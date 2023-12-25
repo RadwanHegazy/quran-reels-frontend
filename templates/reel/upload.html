@@ -23,11 +23,12 @@
 
     </div>
    
-    <div class="controls">
-        <input type="file" id="img" hidden>
+    <form class="controls" method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+        <input type="file" name="image" id="img" hidden>
         <button type="button" class="upload-btn" id="choose-img">أرفع الصورة</button>
 
-        <select name="surah" id="">
+        <select name="surah" id="surah_container">
             <option value="#" selected>اختر السورة</option>
 
             <!-- all surah based here -->
@@ -37,7 +38,7 @@
         
         <select name="verse" id="choose_verse">
             <option value="#" selected>اختر الاية</option>
-            <option value="بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم" >verse_based_here</option>
+            <!-- <option value="بسم الله الرحمن الرحيم الحمد لله رب العالمين الرحمن الرحيم" >verse_based_here</option> -->
 
             <!-- all surah based here -->
         </select>
@@ -64,13 +65,69 @@
             <input type="range" name="font_size" min="10" max="30" value="20" id="font_size">
         </div>
 
-        <button class="submit">نشر</button>
+        <button class="submit" type="submit">نشر</button>
 
 
 
-    </div>
+    </form>
 
     <script src="{% static 'js/upload.js' %}"></script>
 
+    <script>
+
+
+        var surah_container = document.getElementById('surah_container')
+
+        async function logSurah() {
+            const response = await fetch("{{main_url}}/quran/surah/");
+            const all_surah = await response.json();
+            
+            all_surah.forEach(surah=>{
+
+                var name = surah.name;
+                var id = surah.id;
+
+                var option = document.createElement('option');
+                option.setAttribute('value',id);
+                option.textContent = name;
+
+                surah_container.appendChild(option)
+
+
+                
+        })
+        }
+    
+        logSurah();
+    
+
+        var choose_verse = document.getElementById('choose_verse');
+        async function logAya(ayah_id) {
+            const response = await fetch("{{main_url}}/quran/surah/" + ayah_id + '/');
+            const verses = await response.json();
+            
+            choose_verse.innerHTML = '';
+            verses.forEach(ver =>{
+                var name = ver.text;
+                var id = ver.id;
+
+                var option = document.createElement('option');
+                option.setAttribute('value',id);
+                option.textContent = name;
+
+                choose_verse.appendChild(option)
+            })
+        }
+
+        surah_container.addEventListener('change',function(){
+            logAya(surah_container.value);
+        })
+
+        if ("{{error}}"){
+            alert("{{error}}")
+        }
+    </script>
+
+    
 </body>
 </html>

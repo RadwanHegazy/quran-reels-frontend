@@ -7,9 +7,7 @@ def register (request) :
     context = {}
     if request.method == "POST" : 
 
-        data = {
-            'picture' : None
-        }
+        data = {}
 
         full_name = request.POST['full_name']
         email = request.POST['email']
@@ -19,15 +17,16 @@ def register (request) :
         data['email'] = email
         data['password'] = password
 
+        picture = None
         if 'picture' in request.FILES :
             picture = request.FILES['picture']
-            data['picture'] = picture
+            
 
         action = Action(
             url = MAIN_URL + '/user/register/',
             data = data,
             files={
-                'picture' : data['picture']
+                'picture' : picture
             }
         )
 

@@ -13,5 +13,5 @@ def home_reels (request) :
 
     action.get()
     context['reels'] = action.json_data()
-    
+
     return render(request,'home.html',context)

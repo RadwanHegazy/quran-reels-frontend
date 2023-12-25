@@ -115,9 +115,9 @@ body {
     height: 150px;
     object-fit: contain;
     border-radius: 50%;
-    border: 2px solid #F700FF;
+    border: 7px solid #F700FF;
     filter: drop-shadow(0px 0px 30px #F700FF40);
-    padding: 12px;
+    padding: 5px;
 }
 
 .reel p {
