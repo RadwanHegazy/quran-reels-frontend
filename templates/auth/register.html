@@ -24,7 +24,7 @@
 
         <div class="btns">
             <a href="{% url 'login' %}">تسجيل الدخول ؟</a>
-            <button>انشاء حساب</button>
+            <button type="submit">انشاء حساب</button>
         </div>
         
     </form>
@@ -43,6 +43,11 @@
         img.addEventListener('change',(e)=>{
             ImgView.src = URL.createObjectURL(e.target.files[0]);
         })
+
+
+        if("{{error}}"){
+            alert("{{error}}")
+        }
     </script>
 
 

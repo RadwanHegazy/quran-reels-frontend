@@ -12,8 +12,8 @@
     <div class="up">
         
         <div class="user">
-            <img src="images/user.png" alt="">
-            <p>Radwan Gaber Hijazi</p>
+            <img src="{{main_url}}{{user.picture}}" alt="">
+            <p>{{user.full_name}}</p>
         </div>
 
         <div class="btns">
@@ -25,11 +25,13 @@
 
     <div class="reels">
 
-        <div class="reel">
-            <img src="images/user.png" alt="">
-            <p>Radwan Gaber</p>
-            <a href="#">مشاهدة</a>
-        </div>
+        {% for reel in reels %}
+            <div class="reel">
+                <img src="{{main_url}}{{reel.user.picture}}" alt="">
+                <p>{{reel.user.full_name}}</p>
+                <a href="{% url 'reel' reel.uuid %}">مشاهدة</a>
+            </div>
+        {% endfor %}
         
     </div>
 
