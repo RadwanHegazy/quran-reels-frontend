@@ -12,22 +12,38 @@
     <div class="container">
 
         <div class="user">
-            <img src="images/user.png" alt="">
-            <p>Radwan Gaber Hijazi</p>
+            <img src="{{main_url}}{{reel.user.picture}}" alt="">
+            <p>{{reel.user.full_name}}</p>
         </div>
 
         <div class="img-cont">
-            <img src="images/radwan.jpeg" alt="">
-            <p class="text">text here</p>
+            <audio src="{{reel.text.verse.audio}}" autoplay="true" hidden></audio>
+            <img src="{{main_url}}{{reel.image.img}}" id="user_img" alt="">
+            <p class="text" id="user_text">{{reel.text.verse.text}}</p>
             <div class="overlay"></div>
         </div>
 
         <div class="btns">
-            <a href="#">التالي</a>
-            <a href="#">السابق</a>
+            <a href="/">الرجوع</a>
+            <!-- <a href="#">السابق</a> -->
         </div>
 
     </div>
+
+
+    <script>
+
+        var text = document.getElementById('user_text');
+
+        text.style.top = "{{reel.text.y}}%";
+        text.style.left = "{{reel.text.x}}%";
+        text.style.fontSize = "{{reel.text.font_size}}px";
+        
+
+        var user_img = document.getElementById('user_img');
+        user_img.style.scale = "{{reel.image.scale}}";
+
+    </script>
 
 </body>
 </html>

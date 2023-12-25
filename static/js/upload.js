@@ -31,9 +31,14 @@ var choose_verse = document.getElementById('choose_verse');
 
 choose_verse.addEventListener('change',(e)=>{
     if (imgView){
+
+        if (document.querySelector('.text')){
+            document.querySelector('.text').remove()
+        }
         text_p = document.createElement('p');
         text_p.setAttribute('class','text')
-        text_p.textContent = choose_verse.value;
+        console.log(choose_verse)
+        text_p.textContent = choose_verse.options[choose_verse.selectedIndex].text;
         img_cont.appendChild(text_p)
     }else{
         alert('اختر الصورة اولا')

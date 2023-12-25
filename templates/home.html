@@ -27,7 +27,7 @@
 
         {% for reel in reels %}
             <div class="reel">
-                <img src="{{main_url}}{{reel.user.picture}}" alt="">
+                <img src="{{main_url}}{{reel.image.img}}" alt="">
                 <p>{{reel.user.full_name}}</p>
                 <a href="{% url 'reel' reel.uuid %}">مشاهدة</a>
             </div>
