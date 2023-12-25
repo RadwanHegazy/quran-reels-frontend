@@ -18,11 +18,17 @@
 
         <div class="btns">
             <a href="{% url 'register' %}"> انشاء حساب ؟</a>
-            <button>تسجيل الدخول</button>
+            <button type="submit">تسجيل الدخول</button>
         </div>
         
     </form>
     
+
+    <script>
+        if ("{{error}}"){
+            alert("{{error}}")
+        }
+    </script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 import requests
-
-
+from .requests_manager import Action
+from frontend.settings import MAIN_URL
 
 
 class User :
@@ -14,3 +14,25 @@ class User :
 
     def profile (self) -> dict:
         pass
+
+
+
+def userTemp (request) : 
+
+    context = {}
+    user = request.COOKIES.get('user',None)
+    
+    if user is not None :
+        headers = {'Authorization':f"Bearer {user}"}
+        action = Action(
+            url = MAIN_URL + '/user/profile/',
+            headers=headers
+        )
+
+        action.get()
+
+        if action.is_valid() : 
+            context['user'] = action.json_data()
+            context['main_url'] = MAIN_URL
+            
+    return context

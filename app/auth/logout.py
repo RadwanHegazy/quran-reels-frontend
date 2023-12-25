@@ -1,5 +1,9 @@
-
+from django.shortcuts import redirect
 
 
 def logout (request) : 
-    pass
+
+    response = redirect('login')
+    response.delete_cookie('user')
+
+    return response
